@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>招聘岗位 - 科技创新招聘</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="page-transition">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-blue-600">科技创新招聘</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600">首页</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600">关于我们</a>
+                    <a href="jobs.html" class="text-blue-600 font-medium">职位列表</a>
+                    <a href="culture.html" class="text-gray-700 hover:text-blue-600">团队文化</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600">联系我们</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-blue-600">首页</a>
+                    <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-blue-600">关于我们</a>
+                    <a href="jobs.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-gray-50">职位列表</a>
+                    <a href="culture.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-blue-600">团队文化</a>
+                    <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 hover:text-blue-600">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">职位列表</h1>
+            <p class="text-xl max-w-3xl mx-auto">探索我们的热门职位，加入科技创新的前沿</p>
+        </div>
+    </section>
+
+    <!-- 职位筛选 -->
+    <section class="py-8 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-4">筛选条件</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">职位类别</label>
+                        <select class="w-full p-2 border border-gray-300 rounded-md focus:outline-none form-input">
+                            <option>全部类别</option>
+                            <option>技术开发</option>
+                            <option>产品设计</option>
+                            <option>市场营销</option>
+                            <option>运营管理</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">工作地点</label>
+                        <select class="w-full p-2 border border-gray-300 rounded-md focus:outline-none form-input">
+                            <option>全部地点</option>
+                            <option>上海</option>
+                            <option>北京</option>
+                            <option>深圳</option>
+                            <option>杭州</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">工作经验</label>
+                        <select class="w-full p-2 border border-gray-300 rounded-md focus:outline-none form-input">
+                            <option>不限经验</option>
+                            <option>应届毕业生</option>
+                            <option>1-3年</option>
+                            <option>3-5年</option>
+                            <option>5年以上</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">关键词搜索</label>
+                        <input type="text" placeholder="搜索职位名称、技能等" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none form-input">
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300 custom-btn">搜索职位</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 职位列表 -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8">当前职位 (15)</h2>
+            
+            <!-- 职位卡片 -->
+            <div class="space-y-6">
+                <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition duration-300 job-card">
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600">高级前端工程师</h3>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">技术开发</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">上海</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">3-5年</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">25-35K</span>
+                            </div>
+                            <p class="mt-3 text-gray-600">负责公司产品的前端开发工作，使用React、Vue等现代前端框架，打造高性能、可扩展的用户界面。</p>
+                            <div class="mt-3">
+                                <span class="text-sm text-gray-500">技能要求：</span>
+                                <div class="flex flex-wrap gap-1 mt-1">
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">React</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Vue</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">JavaScript</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">TypeScript</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">CSS3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-4 flex items-center">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">申请职位</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition duration-300 job-card">
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600">产品经理</h3>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">产品设计</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">北京</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">3-5年</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">30-40K</span>
+                            </div>
+                            <p class="mt-3 text-gray-600">负责公司核心产品的规划和设计，分析用户需求，制定产品路线图，协调开发团队实现产品功能。</p>
+                            <div class="mt-3">
+                                <span class="text-sm text-gray-500">技能要求：</span>
+                                <div class="flex flex-wrap gap-1 mt-1">
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">需求分析</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">用户研究</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">产品规划</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">数据分析</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-4 flex items-center">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">申请职位</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition duration-300 job-card">
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600">后端开发工程师</h3>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">技术开发</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">深圳</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">1-3年</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">20-30K</span>
+                            </div>
+                            <p class="mt-3 text-gray-600">负责公司核心系统的后端开发，设计和实现高性能、可扩展的API和服务，优化系统性能。</p>
+                            <div class="mt-3">
+                                <span class="text-sm text-gray-500">技能要求：</span>
+                                <div class="flex flex-wrap gap-1 mt-1">
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Java</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Spring Boot</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Redis</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">微服务</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-4 flex items-center">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">申请职位</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition duration-300 job-card">
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600">UI/UX设计师</h3>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">产品设计</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">上海</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">3-5年</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">20-30K</span>
+                            </div>
+                            <p class="mt-3 text-gray-600">负责公司产品的用户界面和用户体验设计，创造直观、美观且易用的产品界面，提升用户满意度。</p>
+                            <div class="mt-3">
+                                <span class="text-sm text-gray-500">技能要求：</span>
+                                <div class="flex flex-wrap gap-1 mt-1">
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Figma</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Sketch</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Adobe XD</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">用户研究</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">交互设计</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-4 flex items-center">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">申请职位</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition duration-300 job-card">
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600">数据分析师</h3>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">数据分析</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">北京</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">1-3年</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">15-25K</span>
+                            </div>
+                            <p class="mt-3 text-gray-600">负责公司业务数据的分析和挖掘，提供数据洞察和决策支持，优化产品和业务流程。</p>
+                            <div class="mt-3">
+                                <span class="text-sm text-gray-500">技能要求：</span>
+                                <div class="flex flex-wrap gap-1 mt-1">
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Python</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">SQL</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">数据可视化</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">统计分析</span>
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">机器学习</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-4 flex items-center">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">申请职位</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分页 -->
+            <div class="mt-12 flex justify-center">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-gray-500 hover:bg-gray-50 rounded-l-md">上一页</a>
+                    <a href="#" class="py-2 px-4 bg-blue-600 border border-blue-600 text-white hover:bg-blue-700">1</a>
+                    <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-gray-500 hover:bg-gray-50">2</a>
+                    <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-gray-500 hover:bg-gray-50">3</a>
+                    <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-gray-500 hover:bg-gray-50 rounded-r-md">下一页</a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">科技创新招聘</h4>
+                    <p class="text-gray-400">连接优秀人才与领先科技企业</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">首页</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">关于我们</a></li>
+                        <li><a href="jobs.html" class="text-gray-400 hover:text-white">职位列表</a></li>
+                        <li><a href="culture.html" class="text-gray-400 hover:text-white">团队文化</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">联系我们</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>上海市浦东新区科技园区88号</li>
+                        <li>电话: 021-12345678</li>
+                        <li>邮箱: careers@techinno.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">关注我们</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 科技创新招聘. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
